@@ -15,6 +15,7 @@ newFish = [
   {
     name: "Dalmation Molly",
     description: "The Dalmation Molly is a brackish fish that has a black and white body. They prefer to be in a heavily planted tank that is at least 30 gallons.",
+    img: "https://s7d2.scene7.com/is/image/PetSmart/4033031?$pdp-placeholder-mobile$",
     price: 2.75,
     qty: 30
   },

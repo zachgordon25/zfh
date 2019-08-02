@@ -5,7 +5,7 @@ const fishSeed = require('../models/seed.js');
 
 // INDEX
 fish.get('/', (req, res) => {
-  res.send('index');
+  res.render('index.ejs');
 });
 
 module.exports = fish;
