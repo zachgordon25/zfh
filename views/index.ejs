@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Our Fish</title>
 </head>
 
 <body>
-  <h1>View Fish</h1>
-  <%for (let i = 0; i < newFish.length; i++) {%>
-  <h2><%=newFish[i].name%></h2>
-  <img src="<%=newFish[i].img%>" alt="">
+  <h1>Our Fish</h1>
+  <%for (let i = 0; i < fish.length; i++) {%>
+  <h2><%=fish[i].name%></h2>
+  <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
   <%}%>
 
   <a href="/"><button>Back</button></a>
