@@ -11,7 +11,7 @@
 <body>
   <h1>Sell a Fish</h1>
   <form action="/fish" method="POST">
-    <label for="name"></label>
+    <label for="name">*</label>
     <input type="text" name="name" id="name" placeholder="name">
 
     <label for="description"></label>
@@ -20,10 +20,10 @@
     <label for="img"></label>
     <input type="text" name="img" id="img" placeholder="image">
 
-    <label for="price">$</label>
+    <label for="price">*$</label>
     <input type="number" name="price" id="price">.00
 
-    <label for="qty"></label>
+    <label for="qty">*</label>
     <input type="number" name="qty" id="qty" placeholder="qty">
 
     <input type="submit" value="sell">
