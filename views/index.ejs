@@ -11,14 +11,16 @@
 <body>
   <h1>Our Fish</h1>
   <a href="/fish/new"><button>Sell a Fish</button></a>
+  <a href="/"><button>Back</button></a>
   <%for (let i = 0; i < fish.length; i++) {%>
   <a href="/fish/<%=fish[i].id%>">
     <h2><%=fish[i].name%></h2>
   </a>
   <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
   <%}%>
-
-  <a href="/"><button>Back</button></a>
+<nav>
+  
+  </nav>
 </body>
 
 </html>

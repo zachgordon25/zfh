@@ -26,9 +26,6 @@ fish.get('/:id', (req, res) => {
     if (err) {
       console.log(err)
     }
-    const fishPrice = thisFish.price;
-    const stringPrice = fishPrice.toString();
-    console.log(stringPrice);
     res.render('show.ejs', {
       fish: thisFish
     });
