@@ -6,8 +6,6 @@ const PORT = process.env.PORT || 3000;
 
 
 
-
-
 // CONNECT TO MONGO
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ZFH'
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
