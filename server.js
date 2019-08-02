@@ -4,10 +4,12 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// DATABASE
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ZFH'
+
+
+
 
 // CONNECT TO MONGO
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ZFH'
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
   console.log('connected to mongo database')
 });
