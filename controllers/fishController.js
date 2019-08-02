@@ -15,6 +15,11 @@ fish.get('/', (req, res) => {
   });
 });
 
+// NEW (CLIENT)
+fish.get('/new', (req, res) => {
+  res.render('new.ejs')
+})
+
 // SHOW
 fish.get('/:id', (req, res) => {
   Fish.findById(req.params.id, (err, thisFish) => {
@@ -29,6 +34,14 @@ fish.get('/:id', (req, res) => {
     });
   });
 });
+
+// CREATE (SERVER)
+fish.post('/', (req, res) => {
+  Fish.create(req.body, (err, createdFish) => {
+    res.redirect('/fish')
+  })
+})
+
 
 // CALL SEED
 // fish.get('/seed/newfish/viaseedfile', (req, res) => {
