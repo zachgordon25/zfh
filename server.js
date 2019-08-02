@@ -4,7 +4,12 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// CONTROLLER
+const fishController = require('./controllers/fishController.js');
 
+// MIDDLEWARE
+app.use(express.urlencoded({ extended: true }));
+app.use('/fish', fishController);
 
 // CONNECT TO MONGO
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ZFH'
