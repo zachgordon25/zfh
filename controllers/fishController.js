@@ -42,6 +42,16 @@ fish.post('/', (req, res) => {
   })
 })
 
+// DELETE
+fish.delete('/:id', (req, res) => {
+  Fish.findByIdAndRemove(req.params.id, (err, deletedFish) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.redirect('/fish')
+    }
+  })
+})
 
 // CALL SEED
 // fish.get('/seed/newfish/viaseedfile', (req, res) => {

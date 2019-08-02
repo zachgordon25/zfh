@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const express = require('express');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -9,6 +10,7 @@ const fishController = require('./controllers/fishController.js');
 
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 app.use('/fish', fishController);
 
 // LANDING PAGE
