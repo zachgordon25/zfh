@@ -21,13 +21,23 @@ fish.get('/:id', (req, res) => {
     if (err) {
       console.log(err)
     }
-    // let fishPrice = thisFish.price;
-    // fishPrice.toString();
+    const fishPrice = thisFish.price;
+    const stringPrice = fishPrice.toString();
+    console.log(stringPrice);
     res.render('show.ejs', {
       fish: thisFish
     });
   });
 });
+
+// CALL SEED
+// fish.get('/seed/newfish/viaseedfile', (req, res) => {
+//   Fish.insertMany(fishSeed, (err, fish) => {
+//     if (err) { console.log(err); } else {
+//       res.send(fish);
+//     }
+//   });
+// });
 
 
 

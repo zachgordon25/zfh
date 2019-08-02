@@ -9,14 +9,14 @@ newFish = [
   {
     name: "Black Moor Goldfish",
     img: "https://cdn.shopify.com/s/files/1/1141/1330/products/Black-Moor-Goldfish.jpg?v=1516382193",
-    price: 17.50,
+    price: 17,
     qty: 70
   },
   {
     name: "Dalmation Molly",
     description: "The Dalmation Molly is a brackish fish that has a black and white body. They prefer to be in a heavily planted tank that is at least 30 gallons.",
     img: "https://s7d2.scene7.com/is/image/PetSmart/4033031?$pdp-placeholder-mobile$",
-    price: 2.75,
+    price: 3,
     qty: 30
   },
   {
