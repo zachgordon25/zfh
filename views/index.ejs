@@ -11,7 +11,9 @@
 <body>
   <h1>Our Fish</h1>
   <%for (let i = 0; i < fish.length; i++) {%>
-  <h2><%=fish[i].name%></h2>
+  <a href="/fish/<%=fish[i].id%>">
+    <h2><%=fish[i].name%></h2>
+  </a>
   <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
   <%}%>
 

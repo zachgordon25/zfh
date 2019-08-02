@@ -21,18 +21,14 @@ fish.get('/:id', (req, res) => {
     if (err) {
       console.log(err)
     }
-    res.send(`showing fish with db id: ${req.params.id},${thisFish}`);
-
+    // let fishPrice = thisFish.price;
+    // fishPrice.toString();
+    res.render('show.ejs', {
+      fish: thisFish
+    });
   });
 });
 
-// CALL SEED
-// fish.get('/seed/newfish/viaseedfile', (req, res) => {
-//   Fish.insertMany(fishSeed, (err, fish) => {
-//     if (err) { console.log(err); } else {
-//       res.send(fish);
-//     }
-//   });
-// });
+
 
 module.exports = fish;
