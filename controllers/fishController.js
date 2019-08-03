@@ -9,7 +9,7 @@ fish.get('/', (req, res) => {
     if (err) {
       console.log(err)
     }
-    res.render('index.ejs', {
+    res.render('./fish/index.ejs', {
       fish: eachFish
     });
   });
@@ -17,7 +17,7 @@ fish.get('/', (req, res) => {
 
 // NEW (CLIENT)
 fish.get('/new', (req, res) => {
-  res.render('new.ejs');
+  res.render('./fish/new.ejs');
 });
 
 // EDIT
@@ -26,7 +26,7 @@ fish.get('/:id/edit', (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.render('edit.ejs', {
+      res.render('./fish/edit.ejs', {
         fish: foundFish
       });
     }
@@ -39,7 +39,7 @@ fish.get('/:id', (req, res) => {
     if (err) {
       console.log(err)
     }
-    res.render('show.ejs', {
+    res.render('./fish/show.ejs', {
       fish: thisFish
     });
   });
