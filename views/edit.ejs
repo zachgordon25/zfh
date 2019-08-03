@@ -13,19 +13,19 @@
 </body>
 <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
   <label for="name">*</label>
-  <input type="text" name="name" id="name" placeholder="name">
+  <input type="text" name="name" id="name" placeholder="<%=fish.name%>" value="<%=fish.name%>">
 
   <label for="description"></label>
-  <textarea name="description" id="description" placeholder="description"></textarea>
+  <textarea name="description" id="description" placeholder="<%=fish.description%>"><%=fish.description%></textarea>
 
   <label for="img"></label>
-  <input type="text" name="img" id="img" placeholder="image">
+  <input type="text" name="img" id="img" placeholder="image" value="<%fish.img%>">
 
   <label for="price">*$</label>
-  <input type="number" name="price" id="price">.00
+  <input type="number" name="price" id="price" value="<%fish.price%>">.00
 
   <label for="qty">*</label>
-  <input type="number" name="qty" id="qty" placeholder="qty">
+  <input type="number" name="qty" id="qty" placeholder="qty" value="<%=fish.qty%>">
 
   <input type="submit" value="Edit">
 </form>
