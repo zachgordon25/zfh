@@ -65,14 +65,34 @@ fish.delete('/:id', (req, res) => {
 
 // UPDATE (SERVER)
 fish.put('/:id', (req, res) => {
-  Fish.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedFish) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.redirect(`/fish/${req.params.id}`)
-    }
-  })
-})
+  Fish.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedFish) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect(`/fish/${req.params.id}`);
+      }
+    });
+});
+
+// BUY
+fish.put('/buy/:id', (req, res) => {
+  Fish.findByIdAndUpdate(
+    req.params.id,
+    { $inc: { qty: -1 } },
+    { new: true },
+    (err, updatedFish) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect(`/fish/${req.params.id}`)
+      }
+    });
+});
+
 // CALL SEED
 // fish.get('/seed/newfish/viaseedfile', (req, res) => {
 //   Fish.insertMany(fishSeed, (err, fish) => {
