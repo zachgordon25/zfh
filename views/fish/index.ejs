@@ -14,6 +14,9 @@
   <a href="/fish/<%=fish[i].id%>">
     <h2><%=fish[i].name%></h2>
   </a>
+  <%if (fish[i].qty === 0) {%>
+  <h3>OUT OF STOCK</h3>
+  <%}%>
   <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
   <%}%>
 <nav>
