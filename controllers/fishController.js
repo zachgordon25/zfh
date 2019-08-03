@@ -17,13 +17,21 @@ fish.get('/', (req, res) => {
 
 // NEW (CLIENT)
 fish.get('/new', (req, res) => {
-  res.render('new.ejs')
+  res.render('new.ejs');
 });
 
 // EDIT
 fish.get('/:id/edit', (req, res) => {
-  res.send('edit is linked and working')
-})
+  Fish.findById(req.params.id, (err, foundFish) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('edit.ejs', {
+        fish: foundFish
+      });
+    }
+  });
+});
 
 // SHOW
 fish.get('/:id', (req, res) => {
