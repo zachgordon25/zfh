@@ -10,8 +10,8 @@
 
 <body>
   <h1>Our Fish</h1>
-  <a href="/fish/new"><button>Sell a Fish</button></a>
   <a href="/"><button>Back</button></a>
+  <a href="/fish/new"><button>Sell a Fish</button></a>
   <%for (let i = 0; i < fish.length; i++) {%>
   <a href="/fish/<%=fish[i].id%>">
     <h2><%=fish[i].name%></h2>

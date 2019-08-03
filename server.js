@@ -16,13 +16,13 @@ app.use('/fish', fishController);
 // LANDING PAGE
 app.get('/', (req, res) => {
   res.render('home.ejs');
-})
+});
 
 
 // CONNECT TO MONGO
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/ZFH'
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
-  console.log('connected to mongo database')
+  console.log('connected to mongo database');
 });
 
 

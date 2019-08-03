@@ -18,7 +18,7 @@ fish.get('/', (req, res) => {
 // NEW (CLIENT)
 fish.get('/new', (req, res) => {
   res.render('new.ejs')
-})
+});
 
 // SHOW
 fish.get('/:id', (req, res) => {
@@ -35,20 +35,20 @@ fish.get('/:id', (req, res) => {
 // CREATE (SERVER)
 fish.post('/', (req, res) => {
   Fish.create(req.body, (err, createdFish) => {
-    res.redirect('/fish')
-  })
-})
+    res.redirect('/fish');
+  });
+});
 
 // DELETE
 fish.delete('/:id', (req, res) => {
   Fish.findByIdAndRemove(req.params.id, (err, deletedFish) => {
     if (err) {
-      console.log(err)
+      console.log(err);
     } else {
-      res.redirect('/fish')
+      res.redirect('/fish');
     }
-  })
-})
+  });
+});
 
 // CALL SEED
 // fish.get('/seed/newfish/viaseedfile', (req, res) => {
