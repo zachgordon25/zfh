@@ -20,6 +20,11 @@ fish.get('/new', (req, res) => {
   res.render('new.ejs')
 });
 
+// EDIT
+fish.get('/:id/edit', (req, res) => {
+  res.send('edit is linked and working')
+})
+
 // SHOW
 fish.get('/:id', (req, res) => {
   Fish.findById(req.params.id, (err, thisFish) => {
