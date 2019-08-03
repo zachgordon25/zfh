@@ -12,6 +12,7 @@ const fishController = require('./controllers/fishController.js');
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use('/fish', fishController);
+app.use(express.static('public'));
 
 // LANDING PAGE
 app.get('/', (req, res) => {
