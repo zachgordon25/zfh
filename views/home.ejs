@@ -8,10 +8,13 @@
 
 <body>
   <div class="container">
-    <h1>Welcome to ZFH!</h1>
-    <h2>Zach's Fish House</h2>
 
-    <a href="/fish"><button class="btn btn-secondary btn-lg">Come On In</button></a>
+    <h1>Welcome to ZFH!</h1>
+
+    <h2>Zach's Fish House</h2>
+    <div id="btn">
+      <a href="/fish"><button class="btn btn-secondary btn-lg">Come On In</button></a>
+    </div>
   </div>
 </body>
 
@@ -23,11 +26,17 @@
     text-align: center;
   }
 
+  h1 {
+    margin: 20px;
+  }
+
+  #btn {
+    text-align: center;
+    margin-top: 20%;
+  }
 
   button {
-    position: absolute;
-    top: 50%;
-    margin-left: 34%
+    margin: 0 auto;
   }
 
   /* @media (min-width: 600px) {

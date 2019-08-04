@@ -9,8 +9,21 @@
 <body>
   <div class="container">
     <h1>Our Fish</h1>
-    <a href="/"><button type="button" class="btn btn-secondary">Back</button></a>
-    <a href="/fish/new"><button type="button" class="btn btn-warning">Sell a Fish</button></a>
+
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">
+          <button type="button" class="btn btn-secondary">Back</button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/fish/new">
+          <button type="button" class="btn btn-warning">Sell a Fish</button>
+        </a>
+      </li>
+    </ul>
+    <hr>
+
     <div class="flex-container">
       <%for (let i = 0; i < fish.length; i++) {%>
       <div class="card">
@@ -27,6 +40,11 @@
 </html>
 
 <style>
+
+h1 {
+  text-align: center;
+}
+
 .flex-container {
   display: flex;
   width: 90%;
@@ -39,6 +57,7 @@
 
 .card {
   margin-top: 20px;
+  margin-bottom: 7px;
   border: 1px solid gray;
  text-align: center;
 }
