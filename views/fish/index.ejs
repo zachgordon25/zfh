@@ -7,18 +7,20 @@
 </head>
 
 <body>
-  <h1>Our Fish</h1>
-  <a href="/"><button>Back</button></a>
-  <a href="/fish/new"><button>Sell a Fish</button></a>
-  <div class="flex-container">
-    <%for (let i = 0; i < fish.length; i++) {%>
-    <div class="card">
-      <a href="/fish/<%=fish[i].id%>">
-        <h2><%=fish[i].name%></h2>
-      </a>
-      <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
-    </div>
-    <%}%>
+  <div class="container">
+    <h1>Our Fish</h1>
+    <a href="/"><button type="button" class="btn btn-secondary">Back</button></a>
+    <a href="/fish/new"><button type="button" class="btn btn-warning">Sell a Fish</button></a>
+    <div class="flex-container">
+      <%for (let i = 0; i < fish.length; i++) {%>
+      <div class="card">
+        <a href="/fish/<%=fish[i].id%>">
+          <h2><%=fish[i].name%></h2>
+        </a>
+        <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
+      </div>
+      <%}%>
+  </div>
     </div>
 </body>
 
@@ -50,6 +52,6 @@ img {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  outline: 1px solid black;
+  outline: 1px solid gray;
 }
 </style>
