@@ -13,10 +13,10 @@
   <div class="flex-container">
     <%for (let i = 0; i < fish.length; i++) {%>
     <div class="card">
-      <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
       <a href="/fish/<%=fish[i].id%>">
         <h2><%=fish[i].name%></h2>
       </a>
+      <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
     </div>
     <%}%>
     </div>
@@ -36,9 +36,12 @@
 }
 
 .card {
- border: 1px solid gray;
-  
+ margin: 20px;
+  border: 1px solid gray;
+ text-align: center;
 }
+
+
 
 img {
   position: relative;
@@ -47,5 +50,6 @@ img {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  outline: 1px solid black;
 }
 </style>
