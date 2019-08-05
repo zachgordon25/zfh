@@ -7,33 +7,69 @@
 </head>
 
 <body>
-  <h1>Sell a Fish</h1>
-  <form action="/fish" method="POST">
+  <div class="container">
+    <h1>Sell a Fish</h1>
+    <form action="/fish" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">* Name</label>
+          <input class="form-control" type="text" name="name" id="name" placeholder="Name">
+        </div>
 
-    <label for="name">*</label>
-    <input type="text" name="name" id="name" placeholder="Name">
+        <div class="form-group row">
+          <label for="binomial">Scientific Name</label>
+          <input class="form-control" type="text" name="binomial" id="binomial" placeholder="Scientific Name">
+        </div>
+      </div>
 
-    <label for="binomial"></label>
-    <input type="text" name="binomial" id="binomial" placeholder="Scientific Name">
+      <div class="form-row">
+        <div class="form-group row">
+          <label for="description">Description</label>
+          <textarea class="form-control" name="description" id="description" placeholder="Description"></textarea>
+        </div>
+      </div>
 
-    <label for="description"></label>
-    <textarea name="description" id="description" placeholder="Description"></textarea>
+      <div class="form-row">
+        <div class="form-group row">
+          <label for="img">Image</label>
+          <input class="form-control" type="text" name="img" id="img" placeholder="Image URL">
+        </div>
+      </div>
 
-    <label for="img"></label>
-    <input type="text" name="img" id="img" placeholder="Image URL">
+      <div class="form-row">
+        <div>
+          <label for="price">* Price</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input class="form-control" type="number" name="price" id="price" placeholder="0">
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <label for="price">*$</label>
-    <input type="number" name="price" id="price" placeholder="0">.00
+      <div class="form-row">
+        <div class="form-group row">
+          <label for="qty">* Qty</label>
+          <input class="form-control" type="number" name="qty" id="qty" placeholder="Qty">
+        </div>
+      </div>
+      <input type="submit" value="sell">
+    </form>
 
-    <label for="qty">*</label>
-    <input type="number" name="qty" id="qty" placeholder="Qty">
-
-    <input type="submit" value="sell">
-  </form>
-
-  <nav>
-    <a href="/fish"><button>See All Fish</button></a>
-  </nav>
+    <nav>
+      <a href="/fish"><button>See All Fish</button></a>
+    </nav>
+  </div>
 </body>
 
 </html>
+
+<style>
+  .form-group {
+    margin: 10px;
+  }
+</style>
