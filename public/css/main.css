@@ -18,3 +18,7 @@ img {
   background-size: cover;
   outline: 1px solid gray;
 }
+
+nav {
+  margin-top: 10px;
+}

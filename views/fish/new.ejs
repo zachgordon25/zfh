@@ -7,9 +7,12 @@
 </head>
 
 <body>
+  <a href="/fish"><button type="button" class="btn btn-secondary">See All Fish</button></a>
+
   <div class="container">
     <h1>Sell a Fish</h1>
     <form action="/fish" method="POST">
+
       <div class="form-row">
         <div class="form-group">
           <label for="name">* Name</label>
@@ -57,18 +60,20 @@
           <input class="form-control" type="number" name="qty" id="qty" placeholder="Qty">
         </div>
       </div>
-      <input type="submit" value="sell">
+      <input type="button" class="btn btn-warning" type="submit" value="sell">
     </form>
 
-    <nav>
-      <a href="/fish"><button>See All Fish</button></a>
-    </nav>
+
   </div>
 </body>
 
 </html>
 
 <style>
+  .btn-secondary {
+    margin: 10px;
+  }
+
   .form-group {
     margin: 10px;
   }
