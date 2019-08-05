@@ -21,13 +21,14 @@
 
       <div class="col-sm">
 
-        <p><%=fish.description%></p>
+        
 
         <h3>Price:</h3>
         <h3>$<%=fish.price%></h3>
 
         <%if (fish.qty > 0) {%>
         <h3><%=fish.qty%> in stock</h3>
+        <p><%=fish.description%></p>
         <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
           <input type="submit" value="Buy Fish" id="buy">
         </form>
@@ -35,12 +36,11 @@
         <%} else {%>
         <h3>OUT OF STOCK</h3>
         <%}%>
-
       </div>
     </div>
 
     <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE" />
+        <input type="submit" value="Delete" />
         </form>
         <a href="/fish/<%=fish.id%>/edit"><button>Edit</button></a>
         <a href="/fish"><button>Back</button></a>
