@@ -26,9 +26,9 @@
         <h3>Price:</h3>
         <h3>$<%=fish.price%></h3>
 
+        <p><%=fish.description%></p>
         <%if (fish.qty > 0) {%>
         <h3><%=fish.qty%> in stock</h3>
-        <p><%=fish.description%></p>
         <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
           <input type="submit" value="Buy Fish" id="buy">
         </form>
