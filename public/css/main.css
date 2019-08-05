@@ -10,3 +10,11 @@ a, a:hover {
 p {
   font-style: oblique;
 }
+
+img {
+  position: relative;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  outline: 1px solid gray;
+}

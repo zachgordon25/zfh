@@ -12,6 +12,8 @@
       <div class="col-sm">
         <h1><%=fish.name%></h1>
 
+        <p><%=fish.binomial%></p>
+
         <%if (fish.img) {%>
         <img src="<%=fish.img%>" alt="">
         <%} else {%>
@@ -50,12 +52,7 @@
 
 <style>
   img {
-    position: relative;
     width: 350px;
     height: 350px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    outline: 1px solid gray;
   }
 </style>
