@@ -11,10 +11,17 @@
     <div class="row">
       <div class="col-sm">
         <h1><%=fish.name%></h1>
+
+        <%if (fish.img) {%>
         <img src="<%=fish.img%>" alt="">
+        <%} else {%>
+        <img src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish.name%>">
+        <%}%>
       </div>
 
       <div class="col-sm">
+
+        <p><%=fish.description%></p>
 
         <h3>Price:</h3>
         <h3>$<%=fish.price%></h3>
@@ -29,17 +36,16 @@
         <h3>OUT OF STOCK</h3>
         <%}%>
 
-        <p><%=fish.description%></p>
       </div>
     </div>
 
     <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
-      <input type="submit" value="DELETE" />
-    </form>
-    <a href="/fish/<%=fish.id%>/edit"><button>Edit</button></a>
-    <a href="/fish"><button>Back</button></a>
+        <input type="submit" value="DELETE" />
+        </form>
+        <a href="/fish/<%=fish.id%>/edit"><button>Edit</button></a>
+        <a href="/fish"><button>Back</button></a>
 
-  </div>
+      </div>
 </body>
 
 </html>

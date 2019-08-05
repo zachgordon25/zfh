@@ -30,7 +30,14 @@
         <a href="/fish/<%=fish[i].id%>">
           <h2><%=fish[i].name%></h2>
         </a>
-        <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt=""></a>
+
+        <%if (fish[i].img) {%>
+        <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt="<%=fish[i].name%>"></a>
+        <% } else {%>
+        <a href="/fish/<%=fish[i].id%>"><img
+            src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg"
+            alt="<%=fish[i].name%>"></a>
+        <% }%>
       </div>
       <%}%>
   </div>
