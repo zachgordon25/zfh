@@ -22,7 +22,7 @@
         <%}%>
         <nav class="nav">
             <a class="nav-item" href="/fish/<%=fish.id%>/edit"><button type="button"
-          class="btn btn-success">Edit</button></a>
+          class="btn btn-primary">Edit</button></a>
         <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
           <input class="btn btn-danger nav-item" type="submit" value="Delete" />
         </form>
@@ -39,7 +39,7 @@
         <%if (fish.qty > 0) {%>
         <h3><%=fish.qty%> in stock</h3>
         <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
-          <input type="submit" value="Buy Fish" id="buy">
+          <input type="button" class="btn btn-success" type="submit" value="Buy Fish" id="buy">
         </form>
 
         <%} else {%>
@@ -58,7 +58,7 @@
   .btn-secondary {
     margin: 10px;
   }
-  
+
   img {
     width: 350px;
     height: 350px;
