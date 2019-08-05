@@ -12,11 +12,6 @@ const app = express();
 const fishController = require('./controllers/fishController.js');
 
 // MIDDLEWARE
-app.use(session({
-  secret: secret,
-  resave: false,
-  saveUninitialized: false
-}));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use('/fish', fishController);

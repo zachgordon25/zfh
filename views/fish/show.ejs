@@ -8,6 +8,7 @@
 
 <body>
   <div class="container">
+    <a href="/fish"><button type="button" class="btn btn-secondary">Back</button></a>
     <div class="row">
       <div class="col-sm">
         <h1><%=fish.name%></h1>
@@ -19,6 +20,14 @@
         <%} else {%>
         <img src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish.name%>">
         <%}%>
+        <nav class="nav">
+            <a class="nav-item" href="/fish/<%=fish.id%>/edit"><button type="button"
+          class="btn btn-success">Edit</button></a>
+        <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
+          <input class="btn btn-danger nav-item" type="submit" value="Delete" />
+        </form>
+
+        </nav>
       </div>
 
       <div class="col-sm">
@@ -37,15 +46,10 @@
         <h3>OUT OF STOCK</h3>
         <%}%>
       </div>
-    </div>
-
-    <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete" />
-        </form>
-        <a href="/fish/<%=fish.id%>/edit"><button>Edit</button></a>
-        <a href="/fish"><button>Back</button></a>
-
+      
       </div>
+
+    </div>
 </body>
 
 </html>
@@ -54,5 +58,13 @@
   img {
     width: 350px;
     height: 350px;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .btn-danger {
+    margin-left: 5px;
   }
 </style>
