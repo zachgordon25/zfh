@@ -11,27 +11,26 @@
 
   <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
     <label for="name">*</label>
-    <input type="text" name="name" id="name" placeholder="<%=fish.name%>" value="<%=fish.name%>">
+    <input type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
 
     <label for="binomial"></label>
-
     <%if (fish.binomial) {%>
-    <input type="text" name="binomial" id="binomial" placeholder="<%=fish.binomial%>" value="<%=fish.binomial%>">
+    <input type="text" name="binomial" id="binomial" placeholder="Scientific Name" value="<%=fish.binomial%>">
     <%} else {%>
-    <input type="text" name="binomial" id="binomial" placeholder="Binomial Name">
+    <input type="text" name="binomial" id="binomial" placeholder="Scientific Name">
     <%}%>
 
     <label for="description"></label>
-    <textarea name="description" id="description" placeholder="<%=fish.description%>"><%=fish.description%></textarea>
+    <textarea name="description" id="description" placeholder="Description"><%=fish.description%></textarea>
 
     <label for="img"></label>
-    <input type="text" name="img" id="img" placeholder="image URL" value="<%=fish.img%>">
+    <input type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>">
 
     <label for="price">*$</label>
-    <input type="number" name="price" id="price" value="<%=fish.price%>">.00
+    <input type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">.00
 
     <label for="qty">*</label>
-    <input type="number" name="qty" id="qty" placeholder="qty" value="<%=fish.qty%>">
+    <input type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
 
     <input type="submit" value="Edit">
   </form>
