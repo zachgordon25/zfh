@@ -39,7 +39,7 @@
         <%if (fish.qty > 0) {%>
         <h3><%=fish.qty%> in stock</h3>
         <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
-          <input type="button" class="btn btn-success" type="submit" value="Buy Fish" id="buy">
+          <input class="btn btn-success" type="submit" value="Buy Fish" id="buy">
         </form>
 
         <%} else {%>
