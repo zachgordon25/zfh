@@ -10,12 +10,19 @@ const app = express();
 
 // CONTROLLER
 const fishController = require('./controllers/fishController.js');
+const userController = require('./controllers/usersController.js');
 
 // MIDDLEWARE
+app.use(session({
+  secret: secret,
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(express.static(__dirname + 'public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use('/fish', fishController);
+app.use('/user', userController);
 
 // LANDING PAGE
 app.get('/', (req, res) => {

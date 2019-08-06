@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head.ejs%>
+  <title>Register</title>
+</head>
+
+<body>
+  <h1>New User</h1>
+
+  <form action="/users" method="POST">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" id="password">
+    <input type="submit" value="Register">
+  </form>
+</body>
+
+</html>
