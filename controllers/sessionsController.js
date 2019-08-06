@@ -12,8 +12,14 @@ sessions.post('/', (req, res) => {
       req.session.currentUser = foundUser;
       res.redirect('/fish');
     } else {
-      res.send('wrong password');
+      res.redirect('/sessions/login');
     }
+  });
+});
+
+sessions.delete('/', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/fish');
   });
 });
 

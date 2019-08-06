@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
 const users = express.Router();
 const User = require('../models/usersModel.js');
 
@@ -6,6 +7,14 @@ const User = require('../models/usersModel.js');
 // NEW (CLIENT)
 users.get('/register', (req, res) => {
   res.render('users/newUser.ejs');
+});
+
+// ENCRYPTING PASSWORD
+users.post('/', (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+  User.create(req.body, (err, createdUser) => {
+    res.redirect('/fish');
+  });
 });
 
 // CREATE (SERVER)
