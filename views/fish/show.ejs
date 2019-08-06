@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <a href="/fish"><button type="button" class="btn btn-secondary">Back</button></a>
+  <a href="/fish"><button type="button" id="back-btn">Back</button></a>
   <div class="container">
     <div class="row">
       <div class="col-sm">
@@ -20,17 +20,18 @@
         <%} else {%>
         <img src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish.name%>">
         <%}%>
-        <nav class="nav">
-            <a class="nav-item" href="/fish/<%=fish.id%>/edit"><button type="button"
-          class="btn btn-primary">Edit</button></a>
+        <nav>
+            <a href="/fish/<%=fish.id%>/edit">
+        <button>Edit</button>
+        </a>
         <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
-          <input class="btn btn-danger nav-item" type="submit" value="Delete" />
+          <input id="delete-btn" type="submit" value="Delete" />
         </form>
 
         </nav>
       </div>
 
-      <div class="col-sm">
+      <div>
 
         <h3>Price:</h3>
         <h3>$<%=fish.price%></h3>
@@ -39,7 +40,7 @@
         <%if (fish.qty > 0) {%>
         <h3><%=fish.qty%> in stock</h3>
         <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
-          <input class="btn btn-success" type="submit" value="Buy Fish" id="buy">
+          <input type="submit" value="Buy Fish" id="buy">
         </form>
 
         <%} else {%>
@@ -55,7 +56,7 @@
 </html>
 
 <style>
-  .btn-secondary {
+  #back-btn {
     margin: 10px;
   }
 
@@ -64,7 +65,7 @@
     height: 350px;
   }
 
-  .btn-danger {
+  #delete-btn {
     margin-left: 5px;
   }
 </style>

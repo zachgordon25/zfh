@@ -4,75 +4,68 @@
 <head>
   <% include ../partials/head.ejs %>
   <title>Our Fish</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .flex-container {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      flex-wrap: wrap;
+      flex-direction: row;
+      height: 400px;
+      justify-content: space-evenly;
+    }
+
+    .card {
+      margin-top: 20px;
+      margin-bottom: 7px;
+      border: 1px solid gray;
+      text-align: center;
+    }
+
+
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Our Fish</h1>
 
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" href="/">
-          <button type="button" class="btn btn-secondary">Back</button>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="/fish/new">
-          <button type="button" class="btn btn-warning">Sell a Fish</button>
-        </a>
-      </li>
-    </ul>
-    <hr>
+  <h1>Our Fish</h1>
+  <a href="/">
+    <button class="ui button">Back</button>
+  </a>
 
-    <div class="flex-container">
-      <%for (let i = 0; i < fish.length; i++) {%>
-      <div class="card">
-        <a href="/fish/<%=fish[i].id%>">
-          <h2><%=fish[i].name%></h2>
-        </a>
+  <a href="/fish/new">
+    <button>Sell a Fish</button>
+  </a>
 
-        <%if (fish[i].img) {%>
-        <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt="<%=fish[i].name%>"></a>
-        <% } else {%>
-        <a href="/fish/<%=fish[i].id%>"><img
-            src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg"
-            alt="<%=fish[i].name%>"></a>
-        <% }%>
-      </div>
-      <%}%>
+  <hr>
+
+  <div class="flex-container">
+    <%for (let i = 0; i < fish.length; i++) {%>
+    <div class="card">
+      <a href="/fish/<%=fish[i].id%>">
+        <h2><%=fish[i].name%></h2>
+      </a>
+
+      <%if (fish[i].img) {%>
+      <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt="<%=fish[i].name%>"></a>
+      <% } else {%>
+      <a href="/fish/<%=fish[i].id%>"><img
+          src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg"
+          alt="<%=fish[i].name%>"></a>
+      <% }%>
+    </div>
+    <%}%>
   </div>
     </div>
 </body>
 
 </html>
-
-<style>
-
-h1 {
-  text-align: center;
-}
-
-.flex-container {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  flex-wrap: wrap;
-  flex-direction: row;
-  height: 400px;
-  justify-content: space-evenly;
-}
-
-.card {
-  margin-top: 20px;
-  margin-bottom: 7px;
-  border: 1px solid gray;
- text-align: center;
-}
-
-
-
-img {
-  width:  300px;
-  height: 300px;
-}
-</style>

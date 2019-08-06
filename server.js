@@ -12,10 +12,10 @@ const app = express();
 const fishController = require('./controllers/fishController.js');
 
 // MIDDLEWARE
+app.use(express.static(__dirname + 'public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use('/fish', fishController);
-app.use(express.static('public'));
 
 // LANDING PAGE
 app.get('/', (req, res) => {

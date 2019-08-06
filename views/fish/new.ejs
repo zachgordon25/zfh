@@ -7,74 +7,55 @@
 </head>
 
 <body>
-  <a href="/fish"><button type="button" class="btn btn-secondary">See All Fish</button></a>
-
-  <div class="container">
-    <h1>Sell a Fish</h1>
-    <form action="/fish" method="POST">
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">* Name</label>
-          <input class="form-control" type="text" name="name" id="name" placeholder="Name">
-        </div>
-
-        <div class="form-group row">
-          <label for="binomial">Scientific Name</label>
-          <input class="form-control" type="text" name="binomial" id="binomial" placeholder="Scientific Name">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group row">
-          <label for="description">Description</label>
-          <textarea class="form-control" name="description" id="description" placeholder="Description"></textarea>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group row">
-          <label for="img">Image</label>
-          <input class="form-control" type="text" name="img" id="img" placeholder="Image URL">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div>
-          <label for="price">* Price</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">$</span>
-            </div>
-            <input class="form-control" type="number" name="price" id="price" placeholder="0">
-            <div class="input-group-append">
-              <span class="input-group-text">.00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group row">
-          <label for="qty">* Qty</label>
-          <input class="form-control" type="number" name="qty" id="qty" placeholder="Qty">
-        </div>
-      </div>
-      <input class="btn btn-warning" type="submit" value="sell">
-    </form>
+  <a href="/fish">
+    <button>See All Fish</button>
+  </a>
 
 
-  </div>
+  <h1>Sell a Fish</h1>
+  <form action="/fish" method="POST">
+
+
+
+    <label for="name">* Name</label>
+    <input type="text" name="name" id="name" placeholder="Name">
+
+
+
+    <label for="binomial">Scientific Name</label>
+    <input type="text" name="binomial" id="binomial" placeholder="Scientific Name">
+
+
+
+
+    <label for="description">Description</label>
+    <textarea name="description" id="description" placeholder="Description"></textarea>
+
+
+
+    <label for="img">Image</label>
+    <input type="text" name="img" id="img" placeholder="Image URL">
+
+
+
+    <label for="price">* Price $</label>
+
+
+    <input type="number" name="price" id="price" placeholder="0">
+
+
+    <label for="qty">* Qty</label>
+    <input type="number" name="qty" id="qty" placeholder="Qty">
+
+    <input type="submit" value="sell">
+  </form>
+
+
+
 </body>
 
 </html>
 
 <style>
-  .btn-secondary {
-    margin: 10px;
-  }
 
-  .form-group {
-    margin: 10px;
-  }
 </style>

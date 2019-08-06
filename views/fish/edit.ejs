@@ -8,76 +8,38 @@
 
 <body>
   <a href="/fish/<%=fish.id%>"><button type="button" class="btn btn-secondary">Back</button></a>
-  <div class="container">
-    <h1>Edit <%=fish.name%></h1>
 
-    <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
+  <h1>Edit <%=fish.name%></h1>
+
+  <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
+
+    <label for="name">* Name</label>
+    <input type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
+
+    <label for="binomial">Scientific Name</label>
+    <input type="text" name="binomial" id="binomial" placeholder="Scientific Name" value="<%=fish.binomial%>">
+
+    <label for="description">Description</label>
+    <textarea name="description" id="description" placeholder="Description"><%=fish.description%></textarea>
+
+    <label for="img">Image</label>
+    <input type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>">
+
+    <label for="price">* Price $</label>
+    <input type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">
+
+    <label for="qty">* Qty</label>
+    <input type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
 
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">* Name</label>
-          <input class="form-control" type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
-        </div>
+    <input type="submit" value="Edit">
+  </form>
 
-        <div class="form-group row">
-          <label for="binomial">Scientific Name</label>
-          <input class="form-control" type="text" name="binomial" id="binomial" placeholder="Scientific Name"
-            value="<%=fish.binomial%>">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group row">
-          <label for="description">Description</label>
-          <textarea class="form-control" name="description" id="description"
-            placeholder="Description"><%=fish.description%></textarea>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group row">
-          <label for="img">Image</label>
-          <input class="form-control" type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div>
-          <label for="price">* Price</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">$</span>
-            </div>
-            <input class="form-control" type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">
-            <div class="input-group-append">
-              <span class="input-group-text">.00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group row">
-          <label for="qty">* Qty</label>
-          <input class="form-control" type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
-        </div>
-      </div>
-
-      <input class="btn btn-info" type="submit" value="Edit">
-    </form>
-  </div>
 
 </body>
 
 </html>
 
 <style>
-  .btn-secondary {
-    margin: 10px;
-  }
 
-  .form-group {
-    margin: 10px;
-  }
 </style>
