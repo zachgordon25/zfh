@@ -21,11 +21,13 @@ app.use(
     saveUninitialized: false
   }));
 app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(__dirname + 'public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+
 app.use('/fish', fishController);
-app.use('/user', userController);
+app.use('/users', userController);
 app.use('/sessions', sessionsController);
 
 // LANDING PAGE
