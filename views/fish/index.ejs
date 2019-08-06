@@ -61,6 +61,10 @@
       width: 300px;
       height: 300px;
     }
+
+    #back {
+      margin-left: 10px;
+    }
   </style>
 </head>
 
@@ -72,11 +76,11 @@
   <%}%>
   <h1>Our Fish</h1>
   <a href="/">
-    <button class="ui button">Back</button>
+    <button id="back" class="ui grey button">Back</button>
   </a>
 
   <a href="/fish/new">
-    <button>Sell a Fish</button>
+    <button class="ui yellow button">Sell a Fish</button>
   </a>
 
   <nav>
@@ -84,20 +88,26 @@
       <%if (currentUser) {%>
   <li class="logout">
     <form action="/sessions?_method=DELETE" method="POST">
-      <input type="submit" value="Logout">
+      <input class="negative ui button" type="submit" value="Logout">
   </li>
   </form>
   <%} else {%>
-  <li>
-    <a href="/sessions/login">
-      <button>Sign In</button>
-    </a>
-  </li>
-  <li>
-    <a href="/users/register">
-      <button>Register</button>
-    </a>
-  </li>
+  <div class="ui buttons">
+    <li>
+      <a href="/users/register">
+        <button class="ui button">Register</button>
+      </a>
+    </li>
+
+    <div class="or"></div>
+
+    <li>
+      <a href="/sessions/login">
+        <button class="ui positive button">Sign In</button>
+      </a>
+    </li>
+
+  </div>
   <%}%>
     </ul>
   </nav>
