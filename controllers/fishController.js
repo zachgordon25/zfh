@@ -10,10 +10,12 @@ fish.get('/', (req, res) => {
       console.log(err)
     }
     res.render('./fish/index.ejs', {
-      fish: eachFish
+      fish: eachFish,
+      currentUser: req.session.currentUser
     });
   });
 });
+
 
 // NEW (CLIENT)
 fish.get('/new', (req, res) => {

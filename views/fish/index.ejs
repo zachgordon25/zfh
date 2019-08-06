@@ -3,6 +3,35 @@
 
 <head>
   <% include ../partials/head.ejs %>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .flex-container {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      flex-wrap: wrap;
+      flex-direction: row;
+      height: 400px;
+      justify-content: space-evenly;
+    }
+
+    .card {
+      margin-top: 20px;
+      margin-bottom: 7px;
+      border: 1px solid gray;
+      text-align: center;
+    }
+
+
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
   <title>Our Fish</title>
   <style>
     h1 {
@@ -36,7 +65,11 @@
 </head>
 
 <body>
-
+  <%if (currentUser) {%>
+  <h1>Welcome, <%=currentUser.username%>!</h1>
+  <%} else {%>
+  <h1>Welcome!</h1>
+  <%}%>
   <h1>Our Fish</h1>
   <a href="/">
     <button class="ui button">Back</button>
@@ -47,36 +80,45 @@
   </a>
 
   <nav>
-    <li>
-      <a href="/sessions/login">
-        <button>Sign In</button>
-      </a>
-    </li>
-    <li>
-      <a href="/users/register">
-        <button>Register</button>
-      </a>
-    </li>
+    <ul>
+      <%if (currentUser) {%>
+  <li class="logout">
+    <form action="/sessions?_method=DELETE" method="POST">
+      <input type="submit" value="Logout">
+  </li>
+  </form>
+  <%} else {%>
+  <li>
+    <a href="/sessions/login">
+      <button>Sign In</button>
+    </a>
+  </li>
+  <li>
+    <a href="/users/register">
+      <button>Register</button>
+    </a>
+  </li>
+  <%}%>
+    </ul>
   </nav>
 
   <hr>
 
   <div class="flex-container">
     <%for (let i = 0; i < fish.length; i++) {%>
-    <div class="card">
-      <a href="/fish/<%=fish[i].id%>">
-        <h2><%=fish[i].name%></h2>
-      </a>
+  <div class="card">
+    <a href="/fish/<%=fish[i].id%>">
+      <h2><%=fish[i].name%></h2>
+    </a>
 
-      <%if (fish[i].img) {%>
-      <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt="<%=fish[i].name%>"></a>
-      <% } else {%>
-      <a href="/fish/<%=fish[i].id%>"><img
-          src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg"
-          alt="<%=fish[i].name%>"></a>
-      <% }%>
-    </div>
-    <%}%>
+    <%if (fish[i].img) {%>
+    <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt="<%=fish[i].name%>"></a>
+    <% } else {%>
+    <a href="/fish/<%=fish[i].id%>"><img
+        src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish[i].name%>"></a>
+    <% }%>
+  </div>
+  <%}%>
   </div>
     </div>
 </body>

@@ -22,3 +22,7 @@ img {
 nav {
   margin-top: 10px;
 }
+
+.logout {
+  list-style: none !important;
+}
