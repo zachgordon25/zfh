@@ -11,6 +11,7 @@ const app = express();
 // CONTROLLER
 const fishController = require('./controllers/fishController.js');
 const userController = require('./controllers/usersController.js');
+const sessionsController = require('./controllers/sessionsController.js');
 
 // MIDDLEWARE
 app.use(
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use('/fish', fishController);
 app.use('/user', userController);
+app.use('/sessions', sessionsController);
 
 // LANDING PAGE
 app.get('/', (req, res) => {
