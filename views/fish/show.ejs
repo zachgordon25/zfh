@@ -23,31 +23,31 @@
         <img src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish.name%>">
         <%}%>
       
-      <nav>
+      <div>
         <a href="/fish/<%=fish.id%>/edit">
-        <button class="ui blue basic button">Edit</button>
+        <button class="ui blue basic left floated button">Edit</button>
         </a>
         <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
           <input id="delete-btn" class="negative ui button" type="submit" value="Delete" />
         </form>
-
-        </nav>
       </div>
 
-      <div class="column">
-        <h3>Price:</h3>
-        <h3>$<%=fish.price%></h3>
+    </div>
 
-        <p><%=fish.description%></p>
-        <%if (fish.qty > 0) {%>
-        <h3><%=fish.qty%> in stock</h3>
-        <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
-          <input class="positive ui button" type="submit" value="Buy Fish" id="buy">
-        </form>
+    <div class="column">
+      <h3>Price:</h3>
+      <h3>$<%=fish.price%></h3>
 
-        <%} else {%>
-        <h3>OUT OF STOCK</h3>
-        <%}%>
+      <p><%=fish.description%></p>
+      <%if (fish.qty > 0) {%>
+      <h3><%=fish.qty%> in stock</h3>
+      <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
+        <input class="positive ui button" type="submit" value="Buy Fish" id="buy">
+      </form>
+
+      <%} else {%>
+      <h3>OUT OF STOCK</h3>
+      <%}%>
 </div>
 </div>
       
@@ -69,7 +69,7 @@
   }
 
   #delete-btn {
-    margin-top: 5px;
+    margin-left: 197.75px;
   }
 
 </style>
