@@ -7,39 +7,45 @@
 </head>
 
 <body>
-  <a href="/fish/<%=fish.id%>"><button type="button" class="btn btn-secondary">Back</button></a>
+  <a href="/fish/<%=fish.id%>"><button class="ui grey button" id="back">Back</button></a>
 
-  <h1>Edit <%=fish.name%></h1>
+  <div class="ui container">
+    <div class="ui form">
 
-  <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
+      <h1>Edit <%=fish.name%></h1>
 
-    <label for="name">* Name</label>
-    <input type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
+      <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
 
-    <label for="binomial">Scientific Name</label>
-    <input type="text" name="binomial" id="binomial" placeholder="Scientific Name" value="<%=fish.binomial%>">
+        <label for="name">* Name</label>
+        <input type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
 
-    <label for="description">Description</label>
-    <textarea name="description" id="description" placeholder="Description"><%=fish.description%></textarea>
+        <label for="binomial">Scientific Name</label>
+        <input type="text" name="binomial" id="binomial" placeholder="Scientific Name" value="<%=fish.binomial%>">
 
-    <label for="img">Image</label>
-    <input type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>">
+        <label for="description">Description</label>
+        <textarea name="description" id="description" placeholder="Description"><%=fish.description%></textarea>
 
-    <label for="price">* Price $</label>
-    <input type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">
+        <label for="img">Image</label>
+        <input type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>">
 
-    <label for="qty">* Qty</label>
-    <input type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
+        <label for="price">* Price $</label>
+        <input type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">
 
-
-    <input type="submit" value="Edit">
-  </form>
+        <label for="qty">* Qty</label>
+        <input type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
 
 
+        <input class="ui purple button" id="edit" type="submit" value="Edit">
+      </form>
+
+    </div>
+  </div>
 </body>
 
 </html>
 
 <style>
-
+  #edit {
+    margin-top: 7px;
+  }
 </style>
