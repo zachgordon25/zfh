@@ -11,13 +11,19 @@ sessions.post('/', (req, res) => {
 
   if (req.body.username === "") {
     res.send('please put in a valid username');
+  } else if (req.body.password === "") {
+    res.send("please put in a valid password");
   } else {
     User.findOne({ username: req.body.username }, (err, foundUser) => {
-      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
-        req.session.currentUser = foundUser;
-        res.redirect('/fish');
+      if (req.body.username !== foundUser) {
+        res.send('try different username');
       } else {
-        res.send('wrong password');
+        if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+          req.session.currentUser = foundUser;
+          res.redirect('/fish');
+        } else {
+          res.send('wrong password');
+        }
       }
     });
   };

@@ -11,10 +11,19 @@ users.get('/register', (req, res) => {
 
 // ENCRYPTING PASSWORD
 users.post('/', (req, res) => {
-  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-  User.create(req.body, (err, createdUser) => {
-    res.redirect('/fish');
-  });
+  if (req.body.username === "") {
+    res.send('please put in a username');
+  } else {
+    if (req.body.password === "") {
+      res.send('please put in a password');
+    } else {
+      req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+      User.create(req.body, (err, createdUser) => {
+        res.redirect('/fish');
+
+      });
+    }
+  }
 });
 
 // CREATE (SERVER)
