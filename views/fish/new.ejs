@@ -8,54 +8,64 @@
 
 <body>
   <a href="/fish">
-    <button>See All Fish</button>
+    <button class="ui grey button" id="back">See All Fish</button>
   </a>
 
+  <div class="ui container">
 
-  <h1>Sell a Fish</h1>
-  <form action="/fish" method="POST">
+    <h1>Sell a Fish</h1>
 
+    <div class="ui form">
 
-
-    <label for="name">* Name</label>
-    <input type="text" name="name" id="name" placeholder="Name">
-
+      <form action="/fish" method="POST">
 
 
-    <label for="binomial">Scientific Name</label>
-    <input type="text" name="binomial" id="binomial" placeholder="Scientific Name">
+        <label for="name">* Name</label>
+        <input type="text" name="name" id="name" placeholder="Name">
 
 
 
-
-    <label for="description">Description</label>
-    <textarea name="description" id="description" placeholder="Description"></textarea>
-
-
-
-    <label for="img">Image</label>
-    <input type="text" name="img" id="img" placeholder="Image URL">
+        <label for="binomial">Scientific Name</label>
+        <input type="text" name="binomial" id="binomial" placeholder="Scientific Name">
 
 
 
-    <label for="price">* Price $</label>
+
+        <label for="description">Description</label>
+        <textarea name="description" id="description" placeholder="Description"></textarea>
 
 
-    <input type="number" name="price" id="price" placeholder="0">
+
+        <label for="img">Image</label>
+        <input type="text" name="img" id="img" placeholder="Image URL">
 
 
-    <label for="qty">* Qty</label>
-    <input type="number" name="qty" id="qty" placeholder="Qty">
 
-    <input type="submit" value="sell">
-  </form>
+        <label for="price">* Price $</label>
 
 
+        <input type="number" name="price" id="price" placeholder="0">
+
+
+        <label for="qty">* Qty</label>
+        <input type="number" name="qty" id="qty" placeholder="Qty">
+
+        <input class="ui yellow button" id="sell" type="submit" value="sell">
+      </form>
+
+    </div>
+  </div>
 
 </body>
 
 </html>
 
 <style>
+  #sell {
+    margin-top: 7px;
+  }
 
+  form {
+    padding: 5px;
+  }
 </style>
