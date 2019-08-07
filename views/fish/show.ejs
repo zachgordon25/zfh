@@ -25,7 +25,7 @@
       
       <div>
         <a href="/fish/<%=fish.id%>/edit">
-        <button class="ui blue basic left floated button">Edit</button>
+        <button class="ui blue left floated button">Edit</button>
         </a>
         <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
           <input id="delete-btn" class="negative ui button" type="submit" value="Delete" />
@@ -66,10 +66,6 @@
   img {
     width: 350px;
     height: 350px;
-  }
-
-  #delete-btn {
-    margin-left: 197.75px;
   }
 
 </style>
