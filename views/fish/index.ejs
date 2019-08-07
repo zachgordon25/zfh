@@ -2,7 +2,15 @@
 <html lang="en">
 
 <head>
-  <% include ../partials/head.ejs %>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
   <style>
     h1 {
       text-align: center;
@@ -25,44 +33,12 @@
       text-align: center;
     }
 
-
-
-    img {
-      width: 300px;
-      height: 300px;
-    }
-  </style>
-  <title>Our Fish</title>
-  <style>
-    h1 {
-      text-align: center;
-    }
-
-    .flex-container {
-      display: flex;
-      width: 90%;
-      margin: auto;
-      flex-wrap: wrap;
-      flex-direction: row;
-      height: 400px;
-      justify-content: space-evenly;
-    }
-
-    .card {
-      margin-top: 20px;
-      margin-bottom: 7px;
-      border: 1px solid gray;
-      text-align: center;
-    }
-
-
-
     img {
       width: 300px;
       height: 300px;
     }
 
-    #back {
+    #login {
       margin-left: 10px;
     }
   </style>
@@ -74,40 +50,45 @@
   <%} else {%>
   <h1>Welcome!</h1>
   <%}%>
+  
+  <div class="container">
   <h1>Our Fish</h1>
-  <a href="/">
-    <button id="back" class="ui grey button">Back</button>
-  </a>
-
-  <a href="/fish/new">
-    <button class="ui yellow button">Sell a Fish</button>
-  </a>
+  
+  
+  <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">
+          <button type="button" class="btn btn-secondary">Home</button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/fish/new">
+          <button type="button" class="btn btn-warning">Sell a Fish</button>
+        </a>
+      </li>
+    </ul>
 
   <nav>
     <ul>
       <%if (currentUser) {%>
   <li class="logout">
     <form action="/sessions?_method=DELETE" method="POST">
-      <input class="negative ui button" type="submit" value="Logout">
+      <input class="btn btn-danger" type="submit" value="Logout">
   </li>
   </form>
   <%} else {%>
-  <div class="ui buttons">
+  <nav class="nav">
     <li>
       <a href="/users/register">
-        <button class="ui button">Register</button>
+        <button class="btn btn-secondary nav-item">Register</button>
       </a>
     </li>
-
-    <div class="or"></div>
-
     <li>
       <a href="/sessions/login">
-        <button class="ui positive button">Sign In</button>
+        <button id="login" class="btn btn-success nav-item">Sign In</button>
       </a>
     </li>
-
-  </div>
+  </nav>
   <%}%>
     </ul>
   </nav>
@@ -115,12 +96,11 @@
   <hr>
 
   <div class="flex-container">
-    <%for (let i = 0; i < fish.length; i++) {%>
+      <%for (let i = 0; i < fish.length; i++) {%>
   <div class="card">
     <a href="/fish/<%=fish[i].id%>">
       <h2><%=fish[i].name%></h2>
     </a>
-
     <%if (fish[i].img) {%>
     <a href="/fish/<%=fish[i].id%>"><img src="<%=fish[i].img%>" alt="<%=fish[i].name%>"></a>
     <% } else {%>
@@ -131,6 +111,7 @@
   <%}%>
   </div>
     </div>
+
 </body>
 
 </html>
