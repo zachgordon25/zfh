@@ -8,14 +8,19 @@ sessions.get('/login', (req, res) => {
 });
 
 sessions.post('/', (req, res) => {
-  User.findOne({ username: req.body.username }, (err, foundUser) => {
-    if (bcrypt.compareSync(req.body.password, foundUser.password)) {
-      req.session.currentUser = foundUser;
-      res.redirect('/fish');
-    } else {
-      res.send('wrong password');
-    }
-  });
+
+  if (req.body.username === "") {
+    res.send('please put in a valid username');
+  } else {
+    User.findOne({ username: req.body.username }, (err, foundUser) => {
+      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+        req.session.currentUser = foundUser;
+        res.redirect('/fish');
+      } else {
+        res.send('wrong password');
+      }
+    });
+  };
 });
 
 sessions.delete('/', (req, res) => {
