@@ -7,9 +7,7 @@
 </head>
 
 <body>
-  <a href="/fish">
-    <button class="ui grey button" id="back">See All Fish</button>
-  </a>
+
 
   <div class="ui container">
 
@@ -18,7 +16,6 @@
     <div class="ui form">
 
       <form action="/fish" method="POST">
-
 
         <label for="name">* Name</label>
         <input type="text" name="name" id="name" placeholder="Name">
@@ -50,6 +47,9 @@
         <label for="qty">* Qty</label>
         <input type="number" name="qty" id="qty" placeholder="Qty">
 
+        <a href="/fish">
+          <button class="ui grey button" id="back">Cancel</button>
+        </a>
         <input class="ui yellow button" id="sell" type="submit" value="sell">
       </form>
 

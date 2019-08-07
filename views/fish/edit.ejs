@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <a href="/fish/<%=fish.id%>"><button class="ui grey button" id="back">Back</button></a>
+
 
   <div class="ui container">
     <div class="ui form">
@@ -34,7 +34,7 @@
         <label for="qty">* Qty</label>
         <input type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
 
-
+        <a href="/fish/<%=fish.id%>"><button class="ui grey button" id="back">Cancel</button></a>
         <input class="ui purple button" id="edit" type="submit" value="Edit">
       </form>
 
