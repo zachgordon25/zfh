@@ -23,9 +23,9 @@
         <img src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish.name%>">
         <%}%>
       
-      <div>
+      <div class="buttons">
         <a href="/fish/<%=fish.id%>/edit">
-        <button class="ui blue left floated button">Edit</button>
+        <button class="ui blue button">Edit</button>
         </a>
         <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
           <input id="delete-btn" class="negative ui button" type="submit" value="Delete" />
@@ -65,4 +65,14 @@
     height: 350px;
   }
 
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  #delete-btn {
+    display: inline;
+    margin: 0px;
+  }
 </style>
