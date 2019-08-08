@@ -48,7 +48,7 @@
         </form>
 
         <%} else {%>
-        <h3>OUT OF STOCK</h3>
+        <h3 id="oos">OUT OF STOCK</h3>
         <%}%>
 </div>
 </div>
@@ -77,5 +77,10 @@
   #delete-btn {
     display: inline;
     margin: 0px;
+  }
+
+  #oos {
+    font-weight: bold;
+    color: red;
   }
 </style>
