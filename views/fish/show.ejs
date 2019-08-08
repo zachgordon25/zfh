@@ -16,9 +16,7 @@
         <h1><%=fish.name%></h1>
         <p><%=fish.binomial%></p>
 
-        <%if(currentUser) {%>
-        <h1><%=currentUser._id%></h1>
-        <%}%>
+
         <%if (fish.img) {%>
         <img src="<%=fish.img%>" alt="">
         <%} else {%>

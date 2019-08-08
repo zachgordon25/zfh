@@ -50,11 +50,11 @@ fish.get('/:id', (req, res) => {
 
 // CREATE (SERVER)
 fish.post('/', (req, res) => {
-  req.body.userId = req.session.currentUser._id;
+  const userId = req.session.currentUser._id
+  req.body.userId = userId;
   Fish.create(req.body, (err, createdFish) => {
     res.redirect('/fish');
   });
-  console.log(req.body.userId);
 });
 
 // DELETE
