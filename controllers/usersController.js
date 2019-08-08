@@ -13,23 +13,22 @@ users.get('/register', (req, res) => {
 users.post('/', (req, res) => {
   if (req.body.username === "") {
     res.render('./users/usersError.ejs');
+  } else if (req.body.password === "") {
+    res.render('./users/usersError.ejs');
   } else {
-    if (req.body.password === "") {
-      res.render('./users/usersError.ejs');
+    req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+    if (req.body.isAdmin === "on") {
+      req.body.isAdmin = true;
     } else {
-      req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
-      if (req.body.isAdmin === "on") {
-        req.body.isAdmin = true;
-      } else {
-        req.body.isAdmin = false;
-      }
-      User.create(req.body, (err, createdUser) => {
-        res.redirect('/fish');
-
-      });
+      req.body.isAdmin = false;
     }
-  }
+    User.create(req.body, (err, createdUser) => {
+      res.redirect('/fish');
+
+    });
+  };
 });
+
 
 // CREATE (SERVER)
 users.post('/', (req, res) => {
