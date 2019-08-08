@@ -18,6 +18,11 @@ users.post('/', (req, res) => {
       res.render('./users/usersError.ejs');
     } else {
       req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+      if (req.body.isAdmin === "on") {
+        req.body.isAdmin = true;
+      } else {
+        req.body.isAdmin = false;
+      }
       User.create(req.body, (err, createdUser) => {
         res.redirect('/fish');
 

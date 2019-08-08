@@ -22,15 +22,16 @@
         <%} else {%>
         <img src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish.name%>">
         <%}%>
-      
-      <div class="buttons">
-        <a href="/fish/<%=fish.id%>/edit">
-        <input type="button" class="ui blue button" value="Edit">
-        </a>
-        <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
-          <input id="delete-btn" class="negative ui button" type="submit" value="Delete" />
-        </form>
-      </div>
+      <%if (currentUser.isAdmin === true) {%>
+        <div class="buttons">
+          <a href="/fish/<%=fish.id%>/edit">
+            <input type="button" class="ui blue button" value="Edit">
+          </a>
+          <form action="/fish/<%=fish.id;%>?_method=DELETE" method="POST">
+            <input id="delete-btn" class="negative ui button" type="submit" value="Delete" />
+          </form>
+        </div>
+        <%}%>
 
     </div>
 
@@ -38,16 +39,16 @@
       <h3>Price:</h3>
       <h3>$<%=fish.price%></h3>
 
-      <p><%=fish.description%></p>
-      <%if (fish.qty > 0) {%>
-      <h3><%=fish.qty%> in stock</h3>
-      <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
-        <input class="positive ui button" type="submit" value="Buy Fish" id="buy">
-      </form>
+        <p><%=fish.description%></p>
+        <%if (fish.qty > 0) {%>
+        <h3><%=fish.qty%> in stock</h3>
+        <form action="/fish/buy/<%=fish.id%>?_method=PUT" method="POST">
+          <input class="positive ui button" type="submit" value="Buy Fish" id="buy">
+        </form>
 
-      <%} else {%>
-      <h3>OUT OF STOCK</h3>
-      <%}%>
+        <%} else {%>
+        <h3>OUT OF STOCK</h3>
+        <%}%>
 </div>
 </div>
       

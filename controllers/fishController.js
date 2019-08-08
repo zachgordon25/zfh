@@ -42,7 +42,8 @@ fish.get('/:id', (req, res) => {
       console.log(err)
     }
     res.render('./fish/show.ejs', {
-      fish: thisFish
+      fish: thisFish,
+      currentUser: req.session.currentUser
     });
   });
 });
