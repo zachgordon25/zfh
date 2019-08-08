@@ -10,16 +10,16 @@ sessions.get('/login', (req, res) => {
 sessions.post('/', (req, res) => {
   User.findOne({ username: req.body.username }, (err, foundUser) => {
     if (req.body.username === "") {
-      res.send('please put in a valid username');
+      res.render('./sessions/sessionsError.ejs');
     } else if (req.body.password === "") {
-      res.send("please put in a valid password");
+      res.render("./sessions/sessionsError.ejs");
     } else if (!foundUser) {
-      res.send('wrong username');
+      res.render('./sessions/sessionsError.ejs');
     } else if (bcrypt.compareSync(req.body.password, foundUser.password)) {
       req.session.currentUser = foundUser;
       res.redirect('/fish');
     } else {
-      res.send('wrong password');
+      res.render('./sessions/sessionsError.ejs');
     }
   });
 });
