@@ -17,8 +17,6 @@ users.post('/', (req, res) => {
     res.render('./users/usersError.ejs');
   } else if (req.body.firstname === "") {
     res.render('./users/usersError.ejs');
-  } else if (req.body.lastname === "") {
-    res.render('./users/usersError.ejs');
   } else {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     if (req.body.isAdmin === "on") {
