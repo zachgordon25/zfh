@@ -9,11 +9,7 @@ sessions.get('/login', (req, res) => {
 
 sessions.post('/', (req, res) => {
   User.findOne({ username: req.body.username }, (err, foundUser) => {
-    if (req.body.username === "") {
-      res.render('./sessions/sessionsError.ejs');
-    } else if (req.body.password === "") {
-      res.render("./sessions/sessionsError.ejs");
-    } else if (!foundUser) {
+    if (!foundUser) {
       res.render('./sessions/sessionsError.ejs');
     } else if (bcrypt.compareSync(req.body.password, foundUser.password)) {
       req.session.currentUser = foundUser;
