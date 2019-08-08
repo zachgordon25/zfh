@@ -17,7 +17,7 @@
       <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
 
         <label for="name">* Name</label>
-        <input type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
+        <input required type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
 
         <label for="binomial">Scientific Name</label>
         <input type="text" name="binomial" id="binomial" placeholder="Scientific Name" value="<%=fish.binomial%>">
@@ -29,10 +29,10 @@
         <input type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>">
 
         <label for="price">* Price $</label>
-        <input type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">
+        <input required type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">
 
         <label for="qty">* Qty</label>
-        <input type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
+        <input required type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
 
         <a href="/fish/<%=fish.id%>"><button class="ui grey button" id="back">Cancel</button></a>
         <input class="ui purple button" id="edit" type="submit" value="Edit">

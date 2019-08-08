@@ -18,7 +18,7 @@
       <form action="/fish" method="POST">
 
         <label for="name">* Name</label>
-        <input type="text" name="name" id="name" placeholder="Name">
+        <input required type="text" name="name" id="name" placeholder="Name">
 
 
 
@@ -39,13 +39,10 @@
 
 
         <label for="price">* Price $</label>
-
-
-        <input type="number" name="price" id="price" placeholder="0">
-
+        <input required type="number" name="price" id="price" placeholder="0">
 
         <label for="qty">* Qty</label>
-        <input type="number" name="qty" id="qty" placeholder="Qty">
+        <input required type="number" name="qty" id="qty" placeholder="Qty">
 
         <a href="/fish">
           <button class="ui grey button" id="back">Cancel</button>
