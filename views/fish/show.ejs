@@ -4,6 +4,29 @@
 <head>
   <% include ../partials/head.ejs %>
   <title><%=fish.name%></title>
+  <style>
+    img {
+      width: 350px;
+      height: 350px;
+    }
+
+    .buttons {
+      display: flex;
+      /* flex-direction: row; */
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    #delete-btn {
+      display: inline;
+      margin: 0px;
+    }
+
+    #oos {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
@@ -59,28 +82,3 @@
 </body>
 
 </html>
-
-<style>
-  
-  img {
-    width: 350px;
-    height: 350px;
-  }
-
-  .buttons {
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  #delete-btn {
-    display: inline;
-    margin: 0px;
-  }
-
-  #oos {
-    font-weight: bold;
-    color: red;
-  }
-</style>
