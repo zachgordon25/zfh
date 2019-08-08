@@ -43,7 +43,8 @@ fish.get('/:id', (req, res) => {
     }
     res.render('./fish/show.ejs', {
       fish: thisFish,
-      currentUser: req.session.currentUser
+      currentUser: req.session.currentUser,
+      userId: req.body.userId
     });
   });
 });
