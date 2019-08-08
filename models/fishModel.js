@@ -6,7 +6,8 @@ const fishSchema = new mongoose.Schema({
   description: String,
   img: String,
   price: { type: Number, required: true, min: 0 },
-  qty: { type: Number, required: true, min: 0 }
+  qty: { type: Number, required: true, min: 0 },
+  userId: Number
 });
 
 const Fish = mongoose.model('Fish', fishSchema);
