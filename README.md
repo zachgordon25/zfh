@@ -21,6 +21,10 @@ Zach's Fish House is your go to marketplace to sell and buy your fish. It is a f
 ---
 
 ![home page](public/img/home.png)
+---
 ![index](public/img/index.png)
+---
 ![show](public/img/show.png)
+---
 ![new](public/img/new.png)
+---
