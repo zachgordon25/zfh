@@ -15,10 +15,21 @@ fish.get('/', (req, res) => {
   });
 });
 
-
 // NEW (CLIENT)
 fish.get('/new', (req, res) => {
   res.render('./fish/new.ejs');
+});
+
+// CART (GET)
+fish.get('/:id/cart', (req, res) => {
+  Fish.findById(req.params.id, (err, thisFish) => {
+    if (err) {
+      console.log(err)
+    }
+    res.render('./fish/cart.ejs', {
+      fish: thisFish
+    });
+  });
 });
 
 // EDIT
@@ -57,6 +68,13 @@ fish.post('/', (req, res) => {
   });
 });
 
+// CART (POST)
+fish.post('/:id/cart', (req, res) => {
+  Fish.create(req.params.id, (err, createdFish) => {
+    res.redirect(`/fish/${req.params.id}/cart`);
+  });
+});
+
 // DELETE
 fish.delete('/:id', (req, res) => {
   Fish.findByIdAndRemove(req.params.id, (err, deletedFish) => {
@@ -84,18 +102,18 @@ fish.put('/:id', (req, res) => {
 });
 
 // BUY
-fish.put('/buy/:id', (req, res) => {
-  Fish.findByIdAndUpdate(
-    req.params.id,
-    { $inc: { qty: -1 } },
-    { new: true },
-    (err, updatedFish) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect(`/fish/${req.params.id}`)
-      }
-    });
-});
+// fish.put('/buy/:id', (req, res) => {
+//   Fish.findByIdAndUpdate(
+//     req.params.id,
+//     { $inc: { qty: -1 } },
+//     { new: true },
+//     (err, updatedFish) => {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         res.redirect(`/fish/${req.params.id}`)
+//       }
+//     });
+// });
 
 module.exports = fish;
