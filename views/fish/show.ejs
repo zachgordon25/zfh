@@ -46,7 +46,7 @@
         <img src="https://www.ccms.edu/wp-content/uploads/2018/07/Photo-Not-Available-Image.jpg" alt="<%=fish.name%>">
         <%}%>
       
-        <%if (currentUser && currentUser.isAdmin === true ||currentUser && currentUser._id === fish.userId) {%>
+        <%if (currentUser && currentUser.isAdmin === true || currentUser && currentUser._id === fish.userId) {%>
         <div class="buttons">
           <a href="/fish/<%=fish.id%>/edit">
             <input type="button" class="ui blue button" value="Edit">
