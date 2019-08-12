@@ -8,7 +8,23 @@
 
 <body>
   <h1>Your Cart</h1>
-  <p><%= fish.name %></p>
+
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Name"><%= fish.name %></td>
+        <td data-label=" Price"><%= fish.price %></td>
+        <td data-label="Quantity"><%= fish.qty %></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 
 </html>
