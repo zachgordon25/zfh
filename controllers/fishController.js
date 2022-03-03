@@ -1,20 +1,29 @@
 const express = require('express');
 const fish = express.Router();
 const Fish = require('../models/fishModel.js');
+// const newFish = require('../models/seed.js');
 
 // INDEX
 fish.get('/', (req, res) => {
   Fish.find({}, (err, eachFish) => {
     if (err) {
-      console.log(err)
+      console.log(err);
     }
     res.render('./fish/index.ejs', {
       fish: eachFish,
-      currentUser: req.session.currentUser
+      currentUser: req.session.currentUser,
     });
   });
 });
 
+// SEED DATA
+// Fish.insertMany(newFish, (error, seedFish) => {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log(seedFish);
+//   }
+// });
 
 // NEW (CLIENT)
 fish.get('/new', (req, res) => {
@@ -28,7 +37,7 @@ fish.get('/:id/edit', (req, res) => {
       console.log(err);
     } else {
       res.render('./fish/edit.ejs', {
-        fish: foundFish
+        fish: foundFish,
       });
     }
   });
@@ -38,19 +47,19 @@ fish.get('/:id/edit', (req, res) => {
 fish.get('/:id', (req, res) => {
   Fish.findById(req.params.id, (err, thisFish) => {
     if (err) {
-      console.log(err)
+      console.log(err);
     }
     res.render('./fish/show.ejs', {
       fish: thisFish,
       currentUser: req.session.currentUser,
-      userId: req.body.userId
+      userId: req.body.userId,
     });
   });
 });
 
 // CREATE (SERVER)
 fish.post('/', (req, res) => {
-  const userId = req.session.currentUser._id
+  const userId = req.session.currentUser._id;
   req.body.userId = userId;
   Fish.create(req.body, (err, createdFish) => {
     res.redirect('/fish');
@@ -70,17 +79,13 @@ fish.delete('/:id', (req, res) => {
 
 // UPDATE (SERVER)
 fish.put('/:id', (req, res) => {
-  Fish.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true },
-    (err, updatedFish) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect(`/fish/${req.params.id}`);
-      }
-    });
+  Fish.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedFish) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect(`/fish/${req.params.id}`);
+    }
+  });
 });
 
 // BUY
@@ -93,9 +98,10 @@ fish.put('/buy/:id', (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        res.redirect(`/fish/${req.params.id}`)
+        res.redirect(`/fish/${req.params.id}`);
       }
-    });
+    }
+  );
 });
 
 module.exports = fish;
