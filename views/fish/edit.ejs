@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <% include ../partials/head.ejs %>
+    <title>Edit</title>
+    <style>
+      #edit {
+        margin-top: 7px;
+      }
+    </style>
+  </head>
 
-<head>
-  <% include ../partials/head.ejs %>
-  <title>Edit</title>
-  <style>
-    #edit {
-      margin-top: 7px;
-    }
-  </style>
-</head>
+  <body>
+    <div class="ui container">
+      <div class="ui form">
+        <h1>Edit <%=fish.name%></h1>
 
-<body>
+        <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
+          <label for="name">* Name</label>
+          <input
+            required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            value="<%=fish.name%>"
+          />
 
+          <label for="binomial">Scientific Name</label>
+          <input
+            type="text"
+            name="binomial"
+            id="binomial"
+            placeholder="Scientific Name"
+            value="<%=fish.binomial%>"
+          />
 
-  <div class="ui container">
-    <div class="ui form">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" placeholder="Description">
+<%=fish.description%></textarea
+          >
 
-      <h1>Edit <%=fish.name%></h1>
+          <label for="img">Image</label>
+          <input type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>" />
 
-      <form action="/fish/<%=fish.id%>?_method=PUT" method="POST">
+          <label for="price">* Price $</label>
+          <input
+            required
+            type="number"
+            name="price"
+            id="price"
+            placeholder="0"
+            value="<%=fish.price%>"
+          />
 
-        <label for="name">* Name</label>
-        <input required type="text" name="name" id="name" placeholder="Name" value="<%=fish.name%>">
+          <label for="qty">* Qty</label>
+          <input
+            required
+            type="number"
+            name="qty"
+            id="qty"
+            placeholder="Qty"
+            value="<%=fish.qty%>"
+          />
 
-        <label for="binomial">Scientific Name</label>
-        <input type="text" name="binomial" id="binomial" placeholder="Scientific Name" value="<%=fish.binomial%>">
-
-        <label for="description">Description</label>
-        <textarea name="description" id="description" placeholder="Description"><%=fish.description%></textarea>
-
-        <label for="img">Image</label>
-        <input type="text" name="img" id="img" placeholder="Image URL" value="<%=fish.img%>">
-
-        <label for="price">* Price $</label>
-        <input required type="number" name="price" id="price" placeholder="0" value="<%=fish.price%>">
-
-        <label for="qty">* Qty</label>
-        <input required type="number" name="qty" id="qty" placeholder="Qty" value="<%=fish.qty%>">
-
-        <a href="/fish/<%=fish.id%>"><button class="ui grey button" id="back">Cancel</button></a>
-        <input class="ui purple button" id="edit" type="submit" value="Edit">
-      </form>
-
+          <input class="ui purple button" id="edit" type="submit" value="Edit" />
+          <a href="/fish/<%=fish.id%>" class="ui grey button" id="back">Cancel</a>
+        </form>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

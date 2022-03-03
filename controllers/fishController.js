@@ -1,7 +1,6 @@
 const express = require('express');
 const fish = express.Router();
 const Fish = require('../models/fishModel.js');
-// const newFish = require('../models/seed.js');
 
 // INDEX
 fish.get('/', (req, res) => {
@@ -17,6 +16,7 @@ fish.get('/', (req, res) => {
 });
 
 // SEED DATA
+// const newFish = require('../models/seed.js');
 // Fish.insertMany(newFish, (error, seedFish) => {
 //   if (error) {
 //     console.log(error);
