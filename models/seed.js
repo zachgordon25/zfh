@@ -105,6 +105,17 @@ newFish = [
     qty: 5,
     __v: 0,
   },
+  {
+    name: 'Flower Horn Cichlid',
+    binomial: 'Cichlasoma sp.',
+    description:
+      'The Flower Horn Cichlid is a hybrid variety of South American cichlids with a distinctive bulbous forehead. Although easy to care for, these fish can be very aggressive towards other fish. They like to root around in their substrate and redecorate their tanks frequently.',
+    img: 'https://www.swelluk.com/wp-content/uploads/What-are-Flowerhorn-cichlids-copy.png',
+    price: 169,
+    qty: 2,
+    userId: '62225a28e7e0af16905f9e5d',
+    __v: 0,
+  },
 ];
 
 module.exports = newFish;
